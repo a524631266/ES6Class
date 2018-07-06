@@ -49,7 +49,29 @@ for(let i = 1; i<3;i++){
     // var i = 2 //报错，
     // 因为 var会变量提升到上一层let创建的作用域中，所以会出现 
     // SyntaxError: Identifier 'i' has already been declared
+    // 谨记 let之后不管是那一层都不能用var了
     setTimeout(function(){
         console.log(i)//2 ， 2 
     })
 }
+
+
+/**
+ * 域解释问题 
+ * 变量提升
+ */
+//1.函数提前调用
+a()
+function a() {
+    console.log("aaa")
+}
+//2.变量提升 let 禁止下面声明
+console.log(aa)
+var aa = 111
+//3 .let 暂时性死区 如果作用域内存在let声明的变量，就会在作用域内绑定该变量，不会向上查找
+let b = 1111111
+{
+    console.log(b)
+    let b =2222
+}
+

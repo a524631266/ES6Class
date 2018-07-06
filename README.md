@@ -4,6 +4,7 @@
 * 1.相关的网站,利用babel使得ES6（ES2015）转化成ES5等等语法，以更好地支持
 目前浏览器的支持，一款线上比较好的在线编译环境
 [babel](http://babeljs.io/repl/)
+[修改https到ssh攻略](https://blog.csdn.net/accountwcx/article/details/46822257)
 * 2.查看node版本
 ```
 查看node版本
