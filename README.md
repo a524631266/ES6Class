@@ -3,7 +3,7 @@
 ## 1.ES6学习资源
 * 1.相关的网站,利用babel使得ES6（ES2015）转化成ES5等等语法，以更好地支持
 目前浏览器的支持，一款线上比较好的在线编译环境
-[babel](babeljs.io/repl/)
+[babel](http://babeljs.io/repl/)
 * 2.查看node版本
 ```
 查看node版本
