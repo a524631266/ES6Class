@@ -17,10 +17,10 @@ chrome插件调试插件
 Debugger for chrome
 
 ## 2.学习内容
-> 1.    学习let与const作用
+>### 1.    学习let与const作用[1.es6.js](https://github.com/a524631266/ES6Class/blob/master/1.es6.js)
 >>   + 首先介绍js中的var 变量 提升的情况（非函数体变量提升以及后定义变量提升）
 >>   + 其次介绍const和 let 与var的不同特性
->>>-        参考文件 1.es6.js
-
-2.学习es6的"打包"与"解包"功能
-
+>>>   - 参考文件 1.es6.js
+>### 2.    学习es6的"打包"与"解包"功能[2.es6变量赋值](https://github.com/a524631266/ES6Class/blob/master/2.es6%E5%8F%98%E9%87%8F%E8%B5%8B%E5%80%BC.js)
+>>   + 介绍一些有趣的解包和打包命令技巧,It's very interesting！
+>>   + 
