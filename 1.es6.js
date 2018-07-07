@@ -1,5 +1,7 @@
+
 /**
  * 
+ 
 //es6 声明方式 类似var
 // var 变量外部能访问
 //{}为一个作用域块,var 会声明到全局作用域（顶部）
@@ -26,7 +28,7 @@ for(var i=0;i<3;i++){
         console.log(i)
     },1000)
 }
-*/
+
 //为了不让i找到全局的i，需要用函数体包裹，以封装函数体
 
 // for(var i=0;i<3;i++){
@@ -36,7 +38,7 @@ for(var i=0;i<3;i++){
 //         },1000)
 //     })(i)
 // }
-
+*/
 /**
  * let 和 {} 可以产生一个作用域
  * 1.let 支持块级作用域中声明变量
@@ -69,9 +71,46 @@ function a() {
 console.log(aa)
 var aa = 111
 //3 .let 暂时性死区 如果作用域内存在let声明的变量，就会在作用域内绑定该变量，不会向上查找
+/**
+ * 
+
 let b = 1111111
 {
     console.log(b)
     let b =2222
 }
+ */
 
+/**
+ * 4. const 与 let的唯一一样的地方是域解释问题，存在变量提升
+ * 但是本质的不同是const 不能再次被修改
+ * a) const代表常量，不能被修改，指的是引用空间，为什么这么设计
+ * ，但是如果是对象的话，是可以修改对象内的值的
+ * 
+ * 
+ */
+
+const ab =2;
+ab = 3//TypeError: Assignment to constant variable
+
+
+const c = {"addEventListener":"1111"}
+c["decodeURI"] = "ad"
+c["addEventListener"]="2222"
+
+// let一样会存在变量提升
+console.log(b)
+const b = "111"
+//第二次就会出现TypeError: Assignment to constant variable.
+for(const ii = 0; ii<3;ii++){
+    console.log(ii)
+}
+
+//const 在嵌套作用域中也是可以重复使用的如下
+(function a(){
+    const a = 23;
+    { const a = 2333 ;//在 const 和 {} 共同存在下的行为与let一样
+        console.log(a)//2333
+    }
+    console.log(a)
+})()
