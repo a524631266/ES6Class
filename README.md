@@ -23,7 +23,7 @@ Debugger for chrome
 >### 2.    [学习es6的"打包"与"解包"功能](https://github.com/a524631266/ES6Class/blob/master/2.es6%E5%8F%98%E9%87%8F%E8%B5%8B%E5%80%BC.js)
 >>   + 介绍一些有趣的解包和打包命令技巧,It's very interesting！
 >>   
->### 3.    [学习string常用的方法，比如新增模板匹配功能]()https://github.com/a524631266/ES6Class/blob/master/3.string.js
+>### 3.    [学习string常用的方法，比如新增模板匹配功能](https://github.com/a524631266/ES6Class/blob/master/3.string.js)
 >>   + 为什么要引入模板匹配，为了快速开发，减少恶心的字符串拼接
 >>   + 学习如何用正则表达方式实现一个模板匹配的功能
 >>>   - 经典书籍```[编译原理-第二版](龙书，虎书)```可以看看，用来提升自己的代码能力，想实现编译器的可以参考
