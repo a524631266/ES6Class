@@ -28,3 +28,8 @@ Debugger for chrome
 >>   + 学习如何用正则表达方式实现一个模板匹配的功能
 >>>   - 经典书籍```[编译原理-第二版](龙书，虎书)```可以看看，用来提升自己的代码能力，想实现编译器的可以参考
 >>>   - search replace match 三大字符匹配功能[资料](http://www.runoob.com/js/js-regexp.html)
+>### 4.    [箭头函数及其this指向问题](https://github.com/a524631266/ES6Class/blob/master/4.keliFunction.js)
+>>   + 首先介绍原声js中使用纯函数、new、内部函数的多中用途
+>>   + 再详细介绍箭头函数中this指向的书面上层对象问题
+
+
