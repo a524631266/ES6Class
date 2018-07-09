@@ -29,7 +29,7 @@ Debugger for chrome
 >>>   - 经典书籍```[编译原理-第二版](龙书，虎书)```可以看看，用来提升自己的代码能力，想实现编译器的可以参考
 >>>   - search replace match 三大字符匹配功能[资料](http://www.runoob.com/js/js-regexp.html)
 >### 4.    [箭头函数及其this指向问题](https://github.com/a524631266/ES6Class/blob/master/4.keliFunction.js)
->>   + 首先介绍原声js中使用纯函数、new、内部函数的多中用途
->>   + 再详细介绍箭头函数中this指向的书面上层对象问题
-
-
+>>   + 首先介绍原声js中使用纯函数、new 对象、内部函数的this指向问题
+>>   + 再详细介绍箭头函数中this其实质指向的是书面作用域（非对象上）的对象存在this，而此时的上层对象并不是作用域，这个与第一个介绍的三种情况相互区分（箭头函数本身并不存储this，所以才会向上简单查找）
+>>   + 在了解this的基础之上了解并详细介绍bind，apply，call能够改变函数内部this的方式
+>>>  [apply与call的实质区别](https://blog.csdn.net/lizeshi125/article/details/53670590)

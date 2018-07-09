@@ -70,7 +70,10 @@ let obj = {
 }
 obj.b()//2
 
-//2222222222
+//内部函数this的应用，其实各种监听事件函数里面写的回调函数里面指定的this就是指向window，这也是
+//内部函数中的this为什么会指向window的原因，因为一旦函数的里面再嵌套一层函数
+//层层相扣，最后里面的this满天飞，那么为了最简单明了起见，this都会指向window，这也符合
+//外国人比较直接的思维方式，不像中国人这么绕
 let a =1
 let obj = {
     a:2,
@@ -118,3 +121,76 @@ let obj = {
     }
 }
 obj.b()()//{a:2,b:f}
+
+
+
+
+/**
+ * 改变this的三大方法（三种方法都可以传一个对象参数，作为this的对象）
+ * bind apply call
+ * 这三种方法最本质的区别是
+ * 1.bind只是绑定this传入函数体中，并不执行函数
+ * 2.apply和call在传入函数体中就会默认执行函数
+ */
+//1.bind 并不执行函数的直观试验
+let a =2;
+let bindFunc = {
+    a:1,
+    b:function(){
+        return (function(){
+            console.log(this)//这里的this指的是bindFunc看下方的.之前的对象，如果不bind就直接指向window，因为这是内部函数形式
+        }).bind(this)
+    }
+
+}
+bindFunc.b()//返回函数function () { … }
+bindFunc.b()()//{a: 1, b: }
+//2.apply和call函数的直观试验
+let a =2;
+let callFunc = {
+    a:1,
+    b:function(){
+        return (function(){
+            console.log(this)//这里的this指的是bindFunc看下方的.之前的对象，如果不bind就直接指向window，因为这是内部函数形式
+        }).call(this)
+    }
+}
+callFunc.b()//{a: 1, b: }
+
+let a =2;
+let applyFunc = {
+    a:1,
+    b:function(){
+        return (function(){
+            console.log(this)//这里的this指的是bindFunc看下方的.之前的对象，如果不bind就直接指向window，因为这是内部函数形式
+        }).apply(this)
+    }
+}
+applyFunc.b()//{a: 1, b: }
+
+/**
+ * apply与 call传入其他对象，比如window的话
+ */
+
+let a =2;
+let callFuncW = {
+    a:1,
+    b:function(){
+        return (function(){
+            console.log(this)//这里的this指的是bindFunc看下方的.之前的对象，如果不bind就直接指向window，因为这是内部函数形式
+        }).call(window)
+    }
+}
+callFuncW.b()//window
+
+let a =2;
+let applyFuncW = {
+    a:1,
+    b:function(){
+        return (function(){
+            console.log(this)//这里的this指的是bindFunc看下方的.之前的对象，如果不bind就直接指向window，因为这是内部函数形式
+        }).apply(window)
+    }
+}
+applyFuncW.b()//window
+
