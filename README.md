@@ -33,3 +33,10 @@ Debugger for chrome
 >>   + 再详细介绍箭头函数中this其实质指向的是书面作用域（非对象上）的对象存在this，而此时的上层对象并不是作用域，这个与第一个介绍的三种情况相互区分（箭头函数本身并不存储this，所以才会向上简单查找）
 >>   + 在了解this的基础之上了解并详细介绍bind，apply，call能够改变函数内部this的方式
 >>>  [apply与call的实质区别](https://blog.csdn.net/lizeshi125/article/details/53670590)
+>### 5.    [展开运算符](https://github.com/a524631266/ES6Class/blob/master/5.dotdotdot.js)
+>>   + 了解在函数中使用...操作剩余变量
+>>   + 了解数组与字典对象的...操作的能力 也就是浅拷贝
+>>>   - 利用deepCopy实现对任意对象的深度拷贝，在这个案例中，能学到 __proto__属性的妙用(原型链)
+>>>   - 还能学 constructor 任意变量的类构造 new obj.constructor() 生成一个父类默认空类，用来建立结构相同的数据
+>>>   - 学习了typeof instanceof的类型检测这里可以看看打印出什么东西出来
+>>>   - 使用变量（对象）的hasOwnProperty方法来检测来检测数据是否拥有非原型链上的自身属性
