@@ -62,7 +62,7 @@ let obj ={a:1,fn:function(){},t:/a/,d:new Date(),aa:null}
 console.log(JSON.parse(JSON.stringify(obj)))//{ a: 1, t: {}, d: '2018-07-10T12:40:23.576Z', aa: null }
 
 //无缺陷循环递归  https://www.cnblogs.com/yupeng/archive/2012/04/06/2435386.html
-
+// constructor与prototype https://www.cnblogs.com/yupeng/archive/2012/04/06/2435386.html
 //该功能是返回指定类型的数据，可以用于循环使用功能（多层嵌套对象的情况下） 因为这样能保证一次使用的是深拷贝
 function deepCopy(obj,ifOwnProperty=false){//false会不关心是否是原型链上的属性
     if(typeof obj !== 'object') return obj

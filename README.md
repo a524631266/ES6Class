@@ -36,7 +36,15 @@ Debugger for chrome
 >### 5.    [展开运算符](https://github.com/a524631266/ES6Class/blob/master/5.dotdotdot.js)
 >>   + 了解在函数中使用...操作剩余变量
 >>   + 了解数组与字典对象的...操作的能力 也就是浅拷贝
->>>   - 利用deepCopy实现对任意对象的深度拷贝，在这个案例中，能学到 __proto__属性的妙用(原型链)
+>>>   - 利用deepCopy实现对任意对象的深度拷贝，在这个案例中，能学到 [__proto__](https://blog.csdn.net/ligang2585116/article/details/53522741/)属性的妙用(![原型链](https://github.com/a524631266/ES6Class/blob/master/image/原型链.png "optional title"))
 >>>   - 还能学 constructor 任意变量的类构造 new obj.constructor() 生成一个父类默认空类，用来建立结构相同的数据
 >>>   - 学习了typeof instanceof的类型检测这里可以看看打印出什么东西出来
 >>>   - 使用变量（对象）的hasOwnProperty方法来检测来检测数据是否拥有非原型链上的自身属性
+>### 6.    [数组的常见方法](https://github.com/a524631266/ES6Class/blob/master/6.arr.js)
+>>   + 了解ES5中常见的操作数组的方法 map (some,every,filter,forEach) 
+>>   + 了解ES6中常见的操作数组的方法 find findIndex
+>>   + reduce 聚合
+>>   + for of() 
+>>   + Array.from
+>>   + of()
+
