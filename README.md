@@ -48,3 +48,5 @@ Debugger for chrome
 >>   + Array.from
 >>   + of()
 
+>### 8. [在es5中的没有class的概念](https://github.com/a524631266/ES6Class/blob/master/8.class.js)
+>>   + 这一节用来理解在es5中类似于类的概念 比如继承的实现 用来扩展es6中的类的概念
