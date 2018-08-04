@@ -42,3 +42,9 @@ console.log(a2,hobby,a5)
 let {length:lll} = [0,1,2]
 
 console.log(lll)
+
+
+//es6中的列表态,在export import 中经常出现,要习惯这样的用法
+const a = 1
+const b = 2
+console.log({a,b}); //{ a: 1, b: 2 }

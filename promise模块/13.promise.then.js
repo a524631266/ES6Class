@@ -2,7 +2,7 @@
 //1.首先then方法是异步的
 let a = new Promise(
     (resolve,reject)=>{
-        resolve("成功!")
+        resolve("a成功!")
         console.log(11111111);
     }
 )
@@ -17,6 +17,22 @@ console.log("222222");
     222222
     成功
  */
+
+// 对同一个promise实例的可以多次then,返回同一个结果
+a.then(data=>{
+    console.log(data);
+})
+a.then(data=>{
+    console.log(data);
+})
+a.then(data=>{
+    console.log(data);
+})
+a.then(data=>{
+    console.log(data);
+})
+
+
 console.log("-------------------------");
 //2.then方法如果不return 返回的是return  undefined
 let athen = a.then((data)=>{

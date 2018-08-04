@@ -24,8 +24,12 @@ let read=(url)=>{
     )
 } 
 
+read("promise模块/1.txt").then(data=>{
+    console.log("read",data);
+})
 
-read("12data/1.txt").then(
+
+read("promise模块/1.txt").then(
     (data)=>{
         console.log(data);
         return read(data)
@@ -33,7 +37,10 @@ read("12data/1.txt").then(
     // (err)=>{
     // }
 ).then(
-(data)=>{
-    console.log(data);
-}    
+    (data)=>{
+        console.log(data);
+    }    
 )
+
+module.exports = read
+// export {read};
