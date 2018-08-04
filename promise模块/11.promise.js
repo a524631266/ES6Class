@@ -1,4 +1,3 @@
-//介绍
 /**
  * 1. Promise是es6中出现的新概念,以前没有
  * 
@@ -17,7 +16,7 @@
   * 他是一种异步流程的控制手段
   * 
   */
-//1.首先说起回调地狱,其缺点就是难以维护
+//1.首先说起"回调地狱",其缺点就是难以维护
 $ajax({
     sucess(){
         $ajax({
@@ -34,8 +33,12 @@ $ajax({
 //第一个输出是第二个的输入
 //promise的链式调用让代码更清晰
 //2.其中promise支持多个并发的请求,获取并发请求中的数据
-###Promise.all([new Promise1,new Promise2])
-###返回1,2按照次序的数据,注意是有顺序的
+// a) 同步执行并依次返回数据 按照次序的数据,注意是有顺序的
+let promise = Promise.all([new Promise1,new Promise2])
+
+
+// b) 同步执行返回最早的数据
+Promise.race([new Promise1,new Promise2])
 //3.可以解决异步问题,并不是说promise本身是异步的
 
 /**
