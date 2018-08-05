@@ -5,24 +5,28 @@
 Promise
 class MyPromise{
     constructor(excutor){
-        this.value= undefined;
         this.state = "pending";
         this.value = undefined;
         let resolve = (data)=>{
             if(this.state === "pending"){
                 this.state = "resolve"
                 this.value = data
-                console.log("chenggong");
+                console.log("chenggolkg");
             } 
         }
         let reject = (err)=>{
             if(this.state === "pending"){
                 this.state = "reject"
                 this.value = err
-                console.log("err");
+                // console.log("err");
             }
         }
-        excutor(resolve,reject)
+        try {
+            excutor(resolve,reject)
+        } catch (error) {
+            reject(error)
+        }
+        
     }
     then(successfunc,errfunc){
         if(this.state === "resovle"){
@@ -34,10 +38,12 @@ class MyPromise{
 }
 
 let p = new MyPromise((resolve,reject)=>{
-    resolve("成功")
+    // resolve("成功")
+    // reject("失败")
+    throw new Error
 })
 p.then(data=>{
-    console.log(data);
+    console.log("suc",data);
 },err =>{
-    console.log(err);
+    console.log("err",err);
 })
