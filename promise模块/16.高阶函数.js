@@ -1,6 +1,27 @@
 //函数在js中的地位就是一等公民
 //why?
 //1.函数可以作为输入的参数
+//典型的callback   
+// loadash after
+//如下,为函数eat被调动三次才会除法函数
+
+function after(times,callback){
+    return function (){
+        console.log(times);
+        if(--times === 0){//先--再显示返回值
+            callback()
+        }
+    }
+
+}
+
+let eat = after(3,()=>{
+    console.log("吃完了");
+})
+eat()
+eat()
+eat()
+
 //2.函数可以作为结果 返回(return) 函数返回函数
 console.log("例如一个检测类型的需求");
 function isType(type,value){
