@@ -64,4 +64,53 @@ let pro = new Promise((res,rej)=>{
 })
 //
 let a = Object.prototype.toString.call(pro);
-console.log(a.replace(/\[object\s|\]/g,'')); 
+console.log(a.replace(/\[object\s|\]/g,''));
+
+
+let a = 1.1;
+switch (a) {
+    case 1.<6:
+        console.log(111);
+        break;
+
+    default:
+        break;
+}
+
+
+
+
+let pro1 = new Promise(
+    (resolve,reject)=>{
+        resolve("123456")
+    }
+)
+let pro2 = pro1.then(
+    (data)=>{
+        console.log("pro1,then",data);
+        return 1
+    }
+)
+
+pro2.then(
+    (data)=>{
+        console.log("pro2.then",data);
+        return 1
+    }
+)
+
+
+class A{
+    constructor(excuter){
+        console.log(3333);
+        console.log(excuter())
+        console.log(44444);
+    }
+}
+var a1 = new A(()=>{
+    console.log(1111);
+    console.log(a1);
+    console.log(222222);
+})
+
+
