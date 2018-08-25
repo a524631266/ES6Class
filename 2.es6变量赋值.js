@@ -6,7 +6,7 @@
 
 //解包就是存在对象的时候拆分对象,一般应用于传入函数方法内部
 
-//解构赋值
+//解构赋值   事实上，只要某种数据结构具有 Iterator 接口，都可以采用数组形式的解构赋值。
 // 数组的必须位置相同
 let arr = ["zhangll","20","cccc"];
 console.log(arr)
@@ -48,3 +48,53 @@ console.log(lll)
 const a = 1
 const b = 2
 console.log({a,b}); //{ a: 1, b: 2 }
+
+
+// const 的 赋值是对内存地址不改变的前提下
+const obj = []
+obj[0]= 1
+obj[3] = 3
+console.log(obj);//[ 1, <2 empty items>, 3 ]
+obj = [1,2]//TypeError: Assignment to constant variable.
+
+const foo = Object.freeze({})
+foo.prop = "1" //常规模式 这句话会忽略
+console.log(foo);// {}
+
+let a = {"name":"zll","age":2}
+Object.freeze(a)
+a["name"] = "jln"
+console.log(a);//{ name: 'zll', age: 2 } 没有变
+
+//下面是一个将对象彻底冻结的函数,深拷贝
+var contantize  = (obj)=>{
+    Object.freeze(obj)
+    for(let k in obj){
+        if( typeof obj[k] === "object"){
+            contantize(obj[k])
+        }
+    }
+}
+let a = {name:"1",arr:[1,2,3]}
+contantize(a)
+a["arr"][0] = 3
+console.log(a);//{ name: '1', arr: [ 1, 2, 3 ] }
+
+
+
+
+let {a:b} = {"a":1}
+console.log(b);
+
+
+//  实战 1 取数组 最后一个数字
+let arr = [1,2,44,5,443] 
+let {[arr.length-1]:data,[2]:data2} = arr
+console.log(data,data2);
+
+// 实战2 字符串结构
+let [a,b,c] = "zhangll"
+console.log(a,b,c);// z h a
+// 实战3 toString 等号右边的值不是对象或数组，就先将其转为对象
+let {toString : s} = 123
+console.log(s === Number.prototype.toString);

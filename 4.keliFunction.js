@@ -6,9 +6,13 @@ function a(i){
     return i
 }
 console.log(a(1))
-//1.等价箭头函数
+//1.等价箭头函数 这里需要注意,
 let a2 = i => i;
 console.log(a2(2))
+//在包裹了{}的函数体中,没有return 就相当于 return undefined
+let a3 = i => {i};
+console.log(a3(1)); // undefined 
+
 /**
  * 2.柯里函数
  * 其实质就是一单个参数作为函数的输入，最后输出结果
