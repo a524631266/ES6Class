@@ -55,3 +55,4 @@ window.a // 1
 
 let b = 1;
 window.b // undefined
+
