@@ -1,4 +1,4 @@
-//1.生成函数的基础是promise,等待一段时间
+//1.生成函数的基础是promise,等待一段时间，
 function *show(){
     console.log("1111111");
     yield 11;//这里与then的影子
