@@ -1,0 +1,26 @@
+{
+  "name": "es6learning",
+  "version": "1.0.0",
+  "description": "the first class to learn es6 syntax",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a524631266/ES6Class.git"
+  },
+  "keywords": [
+    "es6",
+    "learning"
+  ],
+  "author": "zhangll",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/a524631266/ES6Class/issues"
+  },
+  "homepage": "https://github.com/a524631266/ES6Class#readme",
+  "dependencies": {
+    "node-fetch": "^2.2.0"
+  }
+}
