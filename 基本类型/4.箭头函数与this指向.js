@@ -1,4 +1,6 @@
 //箭头函数的使用 1.为了方便使用，2.this指定相对明确
+//总结 function 中(一般)的this,是指向function中的对象的,如果该对象没有属性会向上一级(没有第二级)查找值
+// 箭头函数 内部是不存在this的,所以要向上找到this之后(其中字典没有this)在调用属性值
 /**
  * 1.最简单的函数调
  */
@@ -197,4 +199,45 @@ let applyFuncW = {
     }
 }
 applyFuncW.b()//window
+// 最高及训练
 
+// function找到的是谁
+var a = 100;
+var b = {
+    a:1000,
+    b:{
+        a:1,
+        c:{
+            getA:function(){
+                console.log(this) //{ getA: [Function: getA] }
+                console.log(this.a) // undefined
+            }
+        }
+    }
+}
+b.b.c.getA()
+
+var a = 100;
+var b = {
+    a:1000,
+    d:()=>{
+        console.log(this.a)
+    },
+    b:{
+        a:1,
+        d:()=>{
+            console.log(this.a)
+        },
+        c:{
+            a:2,
+            getA:()=>{
+                console.log(this) // window
+                console.log(this.a) //  如果 var声明的,并且没有闭包,就直接运行到 a
+            }
+        }
+    }
+}
+
+b.b.c.getA() 
+b.d()
+b.b.d()
