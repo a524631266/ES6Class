@@ -34,8 +34,18 @@ let json = {
 // }
 
 for (const key in json) {
-    if (json.hasOwnProperty(key)) {
+    if (json.hasOwnProperty(key)) { // symbol是私有的
         const element = json[key];
         console.log(element)
     }
+}
+
+
+let aa = [1,2,Symbol("ddd")]
+for(let i of aa){ // of 和 symbol.iteration是有关系的
+    console.log('i :', i); // 可以便利出私有的
+}
+
+for(let kk in aa){
+    console.log(aa[kk])
 }

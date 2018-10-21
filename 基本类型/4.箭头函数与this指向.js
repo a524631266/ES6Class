@@ -61,6 +61,7 @@ let a =1
 let obj = {
     a:2,
     b:function(){
+
         console.log(this)//这里的this指的是bfunction内的this，所以，谁调用b，谁就是this
     }
 }
@@ -215,7 +216,11 @@ var b = {
         }
     }
 }
-b.b.c.getA()
+aa =b.b.c.getA 
+aa() //window是this命名空间 100
+b.b.c.getA() // c是this的命名空间 undefiined
+
+
 
 var a = 100;
 var b = {
