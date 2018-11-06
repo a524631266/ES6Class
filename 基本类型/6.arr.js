@@ -8,6 +8,33 @@ console.log(prev,next,`index:${currIndex}`,arr)
 return next+prev
 },0)//加0的区别是
 console.log(a)
+
+
+let data = [
+    [[1,1],[2,2],[3,3]],
+    [[4,4],[5,5],[6,6]],
+    [[7,7],[8,8]]
+]
+
+let cd = data.reduce(
+    (prev,next,index)=>{
+        let value = next.reduce(
+            (prev1,next1)=>{
+                // console.log(prev1,next1);
+                return [(prev1[0]+next1[0])/2,(prev1[1]+next1[1])/2]
+            }
+        )
+        
+        if(index==0){
+            console.log("value0",value,"index0",index);
+            return value
+        }else{
+            console.log("value",value,"index",index);
+            return [(prev[0]+value[0])/2,(prev[1]+value[1])/2]
+        }
+    },data[0][0]
+)
+console.log("cddd",cd)
 //result:
 // 1 2 1 [ 1, 2, 3, 4, 5 ]
 // 3 3 2 [ 1, 2, 3, 4, 5 ]
